@@ -6,6 +6,12 @@ router.get("/", async (req, res) => {
     //debe devolver todos los productos
     //si se entrega parametro limit debe devolver hasta esa cantidad
     const products = await ProductsManager.getAll()
+    const limit = req.query.limit ? req.query.limit : false
+    if (limit) {
+        const limitProduct = products.splice(0, limit)
+        return res.send(limitProduct)
+    }
+
     res.send(products)
 })
 
