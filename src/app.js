@@ -1,6 +1,7 @@
 import express from "express";
 import { options } from "./config/option.js";
 import { productsRouter } from "./routes/products.routes.js";
+import { cartsRouter } from "./routes/carts.routes.js";
 import mongoose from "mongoose";
 
 
@@ -11,8 +12,7 @@ const app = express()
 app.use(express.json())
 app.use("/api/products", productsRouter)
 //app.use("/api/users",)
-//app.use("/api/carts",)
-//app.use("/api/products",)
+app.use("/api/carts", cartsRouter)
 
 
 

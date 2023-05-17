@@ -1,2 +1,2 @@
 
-export const modelsName = { products: "products", }
+export const modelsName = { products: "products", carts: "carts" }

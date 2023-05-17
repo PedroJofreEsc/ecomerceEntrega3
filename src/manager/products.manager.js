@@ -20,12 +20,12 @@ export class ProductsManager {
 
     static updateProduct = async (id, data) => {
 
-        const result = await productsModel.findOneAndUpdate({ _id: id }, data)
+        const result = await productsModel.find({ _id: id }, data)
         return await this.getProductById(id)
     }
 
     static delete = async (id) => {
-        const result = await productsModel.deleteOne({ _id: id })
+        const result = await productsModel.findByIdAndDelete(id)
         return result
 
     }
